@@ -1,0 +1,77 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do header */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Título */
+header h1 {
+    font-size: 1.5rem;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #444;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+    /* Deixa o menu empilhado */
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none; /* escondido por padrão no mobile */
+        background-color: #222;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    nav ul.show {
+        display: flex; /* mostra o menu ao clicar */
+    }
+
+    /* Botão hambúrguer */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+}
+
+/* No desktop o botão não aparece */
+.menu-toggle {
+    display: none;
+}
