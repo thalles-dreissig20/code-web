@@ -1,91 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu site de Música</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="img/spotify.png">
-</head>
-<body>
-    <header>
-        <h1>Um site qualquer</h1>
-        <button class="menu-toggle">☰</button>
-        <nav>
-            <ul>
-                <li><a href="about.html">Sobre mim</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="dicionario.html"></a></li>
-            </ul>
-        </nav>
-    </header>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>orkut – login</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header class="ok-header">
+            <div class="ok-wrap">
+                <h1 class="ok-logo" aria-label="orkut">orkut</h1>
+            </div>
+        </header>
 
-    <!-- Conteúdo principal -->
-    <main>
-        <section id="sobre">
-            <h2>Sobre mim</h2>
-            <p>Meu nome é [Seu Nome]. Sou estudante apaixonado por música e tecnologia.</p>
-        </section>
+        <main class="ok-wrap ok-main">
+            <section class="ok-hero">
+                <h2>Conecte-se com seus amigos</h2>
+                <p>Veja scraps, participe de comunidades e acompanhe as novidades de seus amigos.</p>
+                <p>Mantenha contato com amigos e familiares através de recados e mensagens instantâneas.</p>
+                <p>Descubra novas pessoas e explore amigos em comum e comunidades interessantes.</p>
+                <p>Compartilhe vídeos, fotos e suas paixões em um só lugar.</p>
+            </section>
 
-        <section id="interesses">
-            <h2>Interesses</h2>
-            <ul>
-                <li>Música e produção musical</li>
-                <li>Desenvolvimento Web</li>
-                <li>Inteligência Artificial</li>
-                <li>Jogos digitais</li>
-            </ul>
-        </section>
+            <section class="ok-card" aria-labelledby="titulo-login">
+                <h2 id="titulo-login">Fazer login</h2>
+                <form class="ok-form" onsubmit="event.preventDefault(); alert('Login');">
+                    <label for="email">E‑mail</label>
+                    <input id="email" name="email" type="email" autocomplete="username" required />
 
-        <section id="disciplinas">
-            <h2>Disciplinas cursadas</h2>
-            <ul>
-                <li>Programação Web</li>
-                <li>Algoritmos e Estruturas de Dados</li>
-                <li>Banco de Dados</li>
-                <li>Engenharia de Software</li>
-            </ul>
-        </section>
+                    <label for="senha">Senha</label>
+                    <input id="senha" name="senha" type="password" autocomplete="current-password" required />
 
-        <section id="projetos">
-            <h2>Projetos públicos</h2>
-            <p>Aqui estão alguns dos meus projetos disponíveis online:</p>
-            <ul>
-                <li><a href="https://github.com/seu-usuario/seu-projeto" target="_blank">Projeto 1</a></li>
-                <li><a href="https://github.com/seu-usuario/outro-projeto" target="_blank">Projeto 2</a></li>
-            </ul>
-        </section>
-    </main>
+                    <div class="ok-form-row">
+                        <label class="ok-remember">
+                            <input type="checkbox" id="lembrar" /> Manter-me conectado
+                        </label>
+                        <a class="ok-link" href="#">Não consigo acessar minha conta</a>
+                    </div>
 
-    <!-- Barra lateral -->
-    <aside style="background: #f0f0f0; padding: 15px; border-radius: 8px; margin-top: 20px;">
-        <h3>🔔 Notícias</h3>
-        <ul>
-            <li>Top 10 músicas da semana</li>
-            <li>Novos lançamentos</li>
-            <li>Eventos próximos</li>
-        </ul>
+                    <button class="ok-btn" type="submit">Entrar</button>
 
-        <h3>🎧 Recomendados</h3>
-        <p>Ouça já a playlist especial de Rock!</p>
-    </aside>
+                    <hr class="ok-divider" />
 
-    <!-- Rodapé -->
-    <footer style="margin-top: 30px; padding: 15px; background: #222; color: #fff; text-align: center;">
-        <address>
-            <p>Email: <a href="mailto:exemplo@email.com">exemplo@email.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/seu-perfil" target="_blank">Meu LinkedIn</a></p>
-        </address>
-    </footer>
-</body>
+                    <p class="ok-small">Novo no orkut? <a class="ok-link" href="#">Crie sua conta</a></p>
+                </form>
+            </section>
+        </main>
+
+        <footer class="ok-footer">
+            <div class="ok-wrap">
+                <nav class="ok-links">
+                    <a href="#">Sobre</a>
+                    <span>·</span>
+                    <a href="#">Privacidade</a>
+                    <span>·</span>
+                    <a href="#">Termos</a>
+                </nav>
+                <p class="ok-small">© 2004–2014 orkut</p>
+            </div>
+        </footer>
+    </body>
 </html>
-
-
-<script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navUl = document.querySelector('nav ul');
-
-    menuToggle.addEventListener('click', () => {
-        navUl.classList.toggle('show');
-    });
-</script>

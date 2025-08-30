@@ -1,77 +1,121 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+    --ok-pink:#ed2590;
+    --ok-pink-dark:#b51b6f;
+    --ok-blue:#4d90fe;
+    --ok-blue-dark:#357ae8;
+    --ok-text:#444;
+    --ok-muted:#777;
+    --ok-border:#e7e7e7;
+    --ok-bg:#ffffff;
+    --ok-surface:#fafafa;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    font:14px/1.4 Arial, Helvetica, Tahoma, sans-serif;
+    color:var(--ok-text);
+    background:var(--ok-bg);
 }
 
-/* Estilo do header */
-header {
-    background-color: #222;
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+/* layout */
+.ok-wrap{max-width:980px;margin:0 auto;padding:0 16px}
+.ok-header{
+    border-bottom:1px solid var(--ok-border);
+    background:linear-gradient(#fff,#fbfbfb);
+}
+.ok-logo{
+    font-size:48px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    margin:16px 0;
+    color:var(--ok-pink);
+    font-family:"Trebuchet MS", Verdana, Geneva, Tahoma, sans-serif;
+}
+.ok-main{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:32px;
+    padding:32px 16px 48px;
+}
+.ok-hero h2{
+    font-size:24px;
+    margin:0 0 8px;
+}
+.ok-hero p{
+    margin:0;
+    color:var(--ok-muted);
 }
 
-/* Título */
-header h1 {
-    font-size: 1.5rem;
+/* card de login */
+.ok-card{
+    background:var(--ok-surface);
+    border:1px solid var(--ok-border);
+    border-radius:12px;
+    box-shadow:0 1px 2px rgba(0,0,0,.04);
+    padding:24px;
 }
+.ok-card h2{margin:0 0 16px;font-size:18px}
 
-/* Navegação */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+.ok-form{display:flex;flex-direction:column;gap:10px}
+.ok-form label{font-size:12px;color:#555}
+.ok-form input{
+    padding:10px 12px;
+    border:1px solid #d9d9d9;
+    border-radius:6px;
+    outline:none;
+    transition:border-color .15s, box-shadow .15s;
+    background:#fff;
 }
-
-nav ul li {
-    display: inline;
+.ok-form input:focus{
+    border-color:var(--ok-pink);
+    box-shadow:0 0 0 3px rgba(237,37,144,.12);
 }
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background 0.3s;
+.ok-form-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:6px;
 }
+.ok-remember{display:flex;align-items:center;gap:8px;font-size:12px;color:#555}
 
-nav ul li a:hover {
-    background-color: #444;
+.ok-btn{
+    margin-top:6px;
+    border:0;
+    border-radius:6px;
+    padding:10px 14px;
+    font-weight:600;
+    cursor:pointer;
+    background:var(--ok-blue);
+    color:#fff;
+    box-shadow:0 1px 0 rgba(0,0,0,.08);
+    transition:background .15s, transform .02s ease-in;
 }
+.ok-btn:hover{background:var(--ok-blue-dark)}
+.ok-btn:active{transform:translateY(1px)}
 
-/* ===== Responsividade ===== */
-@media (max-width: 768px) {
-    /* Deixa o menu empilhado */
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        display: none; /* escondido por padrão no mobile */
-        background-color: #222;
-        padding: 10px;
-        border-radius: 8px;
-    }
+.ok-link{color:var(--ok-pink);text-decoration:none}
+.ok-link:hover{color:var(--ok-pink-dark);text-decoration:underline}
 
-    nav ul.show {
-        display: flex; /* mostra o menu ao clicar */
-    }
+.ok-divider{border:0;border-top:1px solid var(--ok-border);margin:14px 0}
+.ok-small{font-size:12px;color:var(--ok-muted)}
 
-    /* Botão hambúrguer */
-    .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
+/* rodapé */
+.ok-footer{
+    border-top:1px solid var(--ok-border);
+    background:#fff;
+    padding:16px 0 32px;
 }
+.ok-links{display:flex;gap:8px;align-items:center}
+.ok-links a{color:var(--ok-muted);text-decoration:none}
+.ok-links a:hover{text-decoration:underline;color:#555}
 
-/* No desktop o botão não aparece */
-.menu-toggle {
-    display: none;
+/* responsivo */
+@media (max-width: 820px){
+    .ok-main{grid-template-columns:1fr;gap:20px}
+    .ok-logo{font-size:42px}
+}
+@media (max-width: 480px){
+    .ok-logo{font-size:36px}
+    .ok-card{padding:16px}
 }
